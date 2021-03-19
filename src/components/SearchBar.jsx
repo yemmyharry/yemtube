@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { Component } from "react";
 
- function SearchBar() {
+export default class SearchBar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      term: "joy",
+    };
+  }
+
+  render() {
     return (
-        <div>
-            <input/>
+      <div>
+        <div className="input-group">
+          <span className="input-group-text" id="basic-addon1">
+            Search
+          </span>
+          <input
+            value={this.state.term}
+            onChange={(e) => this.setState({ term: e.target.value })}
+            type="text"
+            aria-describedby="basic-addon1"
+          />
         </div>
-    )
+      </div>
+    );
+  }
 }
-
-export default SearchBar

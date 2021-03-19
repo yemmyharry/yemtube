@@ -1,34 +1,36 @@
-import React,{Component} from 'react'
-import ReactDOM from 'react-dom'
-import SearchBar from './components/SearchBar'
-import YTSearch from 'youtube-api-search'
-import VideoList from './components/VideoList'
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import SearchBar from "./components/SearchBar";
+import YTSearch from "youtube-api-search";
+import VideoList from "./components/VideoList";
+import VideoDetails from "./components/VideoDetails";
+import style from "./style.css"
 
-const API_KEY = "AIzaSyD_HVzz8_PsB4scLPlvrXccDcvZCoB0aJ8"
+const API_KEY = "AIzaSyD_HVzz8_PsB4scLPlvrXccDcvZCoB0aJ8";
 
 class App extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-             videos: []
-        }
+  constructor(props) {
+    super(props);
 
-        YTSearch({key:API_KEY, term:'john'}, (videos)=>{
-            this.setState({videos})
-            console.log(videos)
-        })
-    }
-    render(){
-          return (
-        <div>
-            <SearchBar/>
-            <VideoList videos={this.state.videos} />
-        </div>
-    ) 
-    }
- 
+    this.state = {
+      videos: [],
+      selectedVideo: null,
+    };
+
+    YTSearch({ key: API_KEY, term: "john" }, (videos) => {
+      this.setState({ videos: videos, selectedVideo: videos[0] });
+      console.log(videos);
+    });
+  }
+  render() {
+    return (
+      <div>
+        <SearchBar />
+        <VideoDetails video={this.state.selectedVideo} />
+        <VideoList videos={this.state.videos} onVideoItemSelect={(selectedVideo)=> (this.setState({ selectedVideo}))} />
+      </div>
+    );
+  }
 }
 
-
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById("root"));
