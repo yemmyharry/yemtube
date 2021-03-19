@@ -5,8 +5,13 @@ export default class SearchBar extends Component {
     super(props);
 
     this.state = {
-      term: "joy",
+      term: "",
     };
+  }
+
+  onInputChange = (term) => {
+    this.setState({term})
+    this.props.onSearchTermChange(term)
   }
 
   render() {
@@ -18,7 +23,7 @@ export default class SearchBar extends Component {
           </span>
           <input
             value={this.state.term}
-            onChange={(e) => this.setState({ term: e.target.value })}
+            onChange={(e) => this.onInputChange(e.target.value)}
             type="text"
             aria-describedby="basic-addon1"
           />
