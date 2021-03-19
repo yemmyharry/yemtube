@@ -29,9 +29,11 @@ class App extends Component {
    }
 
   render() {
+// debounce helps prevent continual search ontype. basically it searches only every 300milliseconds
+    const videoSearch = _.debounce((term) => {this.SearchTerm(term)}, 300)
     return (
       <div>
-        <SearchBar onSearchTermChange={term => this.videoSearch(term)} />
+        <SearchBar onSearchTermChange={videoSearch} />
         <VideoDetails video={this.state.selectedVideo} />
         <VideoList videos={this.state.videos} onVideoItemSelect={(selectedVideo)=> (this.setState({ selectedVideo}))} />
       </div>
