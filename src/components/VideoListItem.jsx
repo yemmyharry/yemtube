@@ -6,7 +6,7 @@ export default function VideoListItem({video, onVideoItemSelect}) {
 
     return (
         <li onClick={()=>(onVideoItemSelect(video))}  className="list-group-item">
-            <div className="video-list media">
+            <div className="video-list media right">
                 <div className="media-left">
                     <img className="media-object" src={imageUrl} />
                 </div>
