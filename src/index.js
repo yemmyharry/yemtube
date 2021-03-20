@@ -1,5 +1,5 @@
-import React, { Component } from "react";
 import _ from "lodash"; 
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import SearchBar from "./components/SearchBar";
 import YTSearch from "youtube-api-search";
@@ -7,7 +7,6 @@ import VideoList from "./components/VideoList";
 import VideoDetails from "./components/VideoDetails";
 import style from "./style.css"
 
-const API_KEY = "AIzaSyD_HVzz8_PsB4scLPlvrXccDcvZCoB0aJ8";
 
 class App extends Component {
   constructor(props) {
@@ -22,7 +21,7 @@ class App extends Component {
 
   }
    videoSearch = (term) => {
-    YTSearch({ key: API_KEY, term: term }, (videos) => {
+    YTSearch({ key: process.env.REACT_APP_API_KEY, term: term }, (videos) => {
       this.setState({ videos: videos, selectedVideo: videos[0] });
       console.log(videos);
     });
@@ -30,7 +29,7 @@ class App extends Component {
 
   render() {
 // debounce helps prevent continual search ontype. basically it searches only every 300milliseconds
-    const videoSearch = _.debounce((term) => {this.SearchTerm(term)}, 300)
+    const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 300)
     return (
       <div>
         <SearchBar onSearchTermChange={videoSearch} />
