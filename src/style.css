@@ -1,28 +1,29 @@
-.input-group{
+/* .input-group{
     text-align: center;
-    /* margin: 10px; */
 }
 
 .input-group input{
     width: 50%
 }
 
-/* .video-list img {
-    max-width: 64px;
-} */
+
 
 .video-details details{
     margin-top: 10px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-/* .list-group{
-    display: flex;
-    justify-content: flex-end;
 } */
 
+/* .list-group{
+    position: absolute;
+    left: 730px;
+    bottom:-300px
+
+    
+    
+} */
+/* 
 .list-group-item{
     cursor: pointer
 }
@@ -32,7 +33,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) 
   }
   
   
@@ -55,4 +56,4 @@
     width: 80%;
     background: #f1f1f1;
     margin: 20px;
-  }
+  } */

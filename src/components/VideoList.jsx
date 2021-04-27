@@ -7,7 +7,7 @@ export default function VideoList({videos, onVideoItemSelect}) {
     } )
     
     return (
-        <ul className="col-md-4 list-group right">
+        <ul className="col-sm-4 list-group right">
             {videoItem}
             
         </ul>
