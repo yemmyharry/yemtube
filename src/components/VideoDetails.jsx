@@ -8,7 +8,7 @@ export default function VideoDetails({video, onVideoItemSelect}) {
     const videoId = video.id.videoId
     const url =  `https://www.youtube.com/embed/${videoId}`
     return (
-        <div className="video-detail col-md-8">
+        <div className="video-detail col-md-6">
             <div className="container">
                 <iframe className="responsive-iframe" src={url}></iframe>
             </div>

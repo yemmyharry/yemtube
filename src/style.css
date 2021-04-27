@@ -1,4 +1,4 @@
-/* .input-group{
+.input-group{
     text-align: center;
 }
 
@@ -13,17 +13,14 @@
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-} */
+} 
 
-/* .list-group{
+ .list-group{
     position: absolute;
     left: 730px;
-    bottom:-300px
+    bottom:-170px 
+}
 
-    
-    
-} */
-/* 
 .list-group-item{
     cursor: pointer
 }
@@ -33,7 +30,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) 
+    padding-top: 56.25%;   /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
   }
   
   
@@ -56,4 +53,12 @@
     width: 80%;
     background: #f1f1f1;
     margin: 20px;
-  } */
+  }
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+     .list-group{
+      position: inherit;
+    }
+  }
